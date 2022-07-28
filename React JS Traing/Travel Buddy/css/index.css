@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'inter';
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: #262626;
+}
+
+ul {
+    list-style: none;
+}
+
+.conatiner {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 30px 30px;
+    font-size: 13px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 44px;
+}
+
+.nav-menu ul {
+    display: flex;
+}
+
+.nav-menu ul li {
+    padding: 0 10px;
+}
+
+.nav-menu ul li a {
+    padding-bottom: 2px;
+}
+
+.nav-menu ul li a:hover {
+    border-bottom: 2px solid #262626;
+}
+
+.nav-menu ul.main-menu {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.logo h5 {
+    margin-top: 20px;
+    width: 130px;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 8px 30px;
+    background: #FF5403;
+    color: #fff;
+    font-size: 13px;
+    ;
+}
+
+.book {
+    color: #fff;
+}
+
+.banner {
+    background: url('/Travel Buddy/assests/banner_bg 1.png') no-repeat center center/cover;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    gap: 30px;
+}
+
+.banner h2 {
+    font-weight: 700;
+    font-size: 96px;
+    color: #fff;
+}
+
+.banner p {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+}
+
+.discover a {
+    width: 168px;
+    height: 80px;
+    background-color: #FF5403;
+    color: #fff;
+    padding: 13px;
+}
+
+.child-nav ul {
+    display: flex;
+    align-content: flex-start;
+    font-size: 15px;
+}
+
+.menu2 li {
+    padding: 0 10px;
+}
+
+.top-place {
+    position: relative;
+    background: #f3f3f3;
+    border: 1px solid blueviolet;
+    top: -30px;
+    width: 80%;
+    height: 120px;
+    margin: auto;
+    padding: 20px 24px;
+}
+
+.menu3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 20px 15px;
+    gap: 34px;
+    width: auto;
+    height: 55px;
+}
+
+.menu3 select {
+    display: flex;
+    width: 140px;
+    padding: 14px 10px;
+    border-color: #2d93ea;
+    background: #fff;
+    color: #2d93ea;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+
+    background-position-y: 7px;
+    outline: none;
+}
+
+.search_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #FF5403;
+}
+
+.top-place-visit,
+h2 {
+    font-weight: 600;
+    font-size: 36px;
+    color: #041562;
+    text-align: center;
+    letter-spacing: 0.05em;
+    justify-content: center;
+
+}
+
+.top-place-visit p {
+    font-size: 18px;
+    color: #626262;
+    padding-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    gap: 50px;
+    padding: 30px 50px;
+}
+
+.child-grid img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn4 {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    padding: 13px 50px;
+    width: 250px;
+    height: 66px;
+    background: #FF5403;
+    margin: auto;
+    gap: 10px;
+}
+
+.d-cover {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.event {
+    background: url('/Travel\ Buddy/assests/event_bg 1.png')no-repeat center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 120px;
+    gap: 25px;
+    max-width: 100%;
+    height: 880px;
+}
+
+.event-card {
+    padding: 50px;
+    align-items: center;
+    background-color: #f3f3f3;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#line2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FF5403;
+}
+
+.line3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+
+    /* identical to box height */
+    letter-spacing: 0.05em;
+
+    color: #041562;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+}
+
+.line1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 170%;
+
+    /* or 31px */
+    letter-spacing: 0.02em;
+
+    color: #626262;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.event-card-child {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 170%;
+
+    /* identical to box height, or 31px */
+    letter-spacing: 0.02em;
+
+    color: #606060;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.plan {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 50px;
+    gap: 10px;
+
+    width: 198px;
+    height: 52px;
+
+    background: #FF5403;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    /* identical to box height */
+
+    color: #FFFFFF;
+}
+
+.header1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding-top: 30px;
+}
+
+.best-service-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding: 30px;
+    justify-content: space-between;
+}
+
+.best-service-card p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+
+    /* identical to box height */
+    letter-spacing: 0.05em;
+}
+
+.best-service-card sub {
+    display: flex;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 170%;
+
+    /* identical to box height, or 31px */
+    letter-spacing: 0.02em;
+
+    color: #626262;
+}
+
+.travel-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #19224D;
+    align-items: flex-start;
+    padding: 108px 100px;
+    gap: 190px;
+    color: #fff;
+}
+
+.travel-footer h2 {
+    position: absolute;
+}
+
+.footer-image img {
+    padding-left: 30px;
+    width: 150px;
+    height: 120px;
+}
+
+.footer-image h2 {
+    color: white;
+}
+
+
+.footer-contact h2 {
+    align-items: center;
+    color: #fff;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.footer-contact address {
+    padding-top: 50px;
+}
+
+.footer-media p {
+    padding-top: 20px;
+    color: red;
+}
+
+.footer-discover h2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: white;
+
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.footer-discover p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 15px;
+    /* identical to box height */
+    letter-spacing: 0.05em;
+}
+.end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+    background: #000B3E;
+    color: #f3f3f3;
+}
