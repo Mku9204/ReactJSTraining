@@ -236,8 +236,9 @@ h2 {
     align-items: flex-end;
     padding: 120px;
     gap: 25px;
+    width: 100%;
     max-width: 100%;
-    height: 880px;
+    height: 879px;
 }
 
 .event-card {
@@ -306,17 +307,7 @@ h2 {
     font-weight: 400;
     font-size: 18px;
     line-height: 170%;
-
-    /* identical to box height, or 31px */
-    letter-spacing: 0.02em;
-
     color: #606060;
-
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 .plan {
@@ -346,10 +337,13 @@ h2 {
 
     color: #FFFFFF;
 }
-.best-service{
+
+.best-service {
     display: flex;
     flex-direction: column;
+padding-top: 45px;
 }
+
 .header1 {
     display: flex;
     flex-direction: column;
@@ -363,8 +357,14 @@ h2 {
     flex-direction: row;
     align-items: center;
     align-content: center;
-    padding: 30px;
-    justify-content: space-between;
+    gap: 50px;
+    justify-content: center;
+    padding-top: 75px;
+}
+
+.best-service-card img {
+    width: 100%;
+    margin-top: 0 120px;
 }
 
 .best-service-card p {
@@ -373,9 +373,6 @@ h2 {
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
-
-    /* identical to box height */
-    letter-spacing: 0.05em;
 }
 
 .best-service-card sub {
@@ -385,39 +382,29 @@ h2 {
     font-weight: 300;
     font-size: 18px;
     line-height: 170%;
-
-    /* identical to box height, or 31px */
-    letter-spacing: 0.02em;
-
     color: #626262;
 }
-
 .travel-footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: #19224D;
     align-items: flex-start;
-    padding: 108px 100px;
-    gap: 190px;
+    padding: 89px 0px;
     color: #fff;
+    margin-top: 100px;
 }
-
 .travel-footer h2 {
     position: absolute;
 }
-
 .footer-image img {
     padding-left: 30px;
     width: 150px;
     height: 120px;
 }
-
 .footer-image h2 {
     color: white;
 }
-
-
 .footer-contact h2 {
     align-items: center;
     color: #fff;
@@ -426,10 +413,6 @@ h2 {
     font-weight: 600;
     font-size: 24px;
     line-height: 29px;
-
-    /* identical to box height */
-    text-align: center;
-    letter-spacing: 0.05em;
 }
 
 .footer-contact address {
@@ -440,7 +423,11 @@ h2 {
     padding-top: 20px;
     color: red;
 }
-
+.footer-discover{
+    display: flex;
+    flex-direction: column;
+    
+}
 .footer-discover h2 {
     font-family: 'Inter';
     font-style: normal;
@@ -448,10 +435,6 @@ h2 {
     font-size: 24px;
     line-height: 29px;
     color: white;
-
-    /* identical to box height */
-    text-align: center;
-    letter-spacing: 0.05em;
 }
 
 .footer-discover p {
@@ -461,8 +444,6 @@ h2 {
     font-size: 18px;
     line-height: 22px;
     padding: 15px;
-    /* identical to box height */
-    letter-spacing: 0.05em;
 }
 .end {
     display: flex;
