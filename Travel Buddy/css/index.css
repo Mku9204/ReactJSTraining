@@ -332,9 +332,6 @@ h2 {
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
-
-    /* identical to box height */
-
     color: #FFFFFF;
 }
 
@@ -387,32 +384,32 @@ padding-top: 45px;
 .travel-footer {
     display: flex;
     flex-direction: row;
+    align-content: center;
     justify-content: space-between;
     background-color: #19224D;
     align-items: flex-start;
-    padding: 89px 0px;
+    padding: 90px 130px;
     color: #fff;
     margin-top: 100px;
+    
 }
-.travel-footer h2 {
+/* .travel-footer h2 {
     position: absolute;
-}
-.footer-image img {
-    padding-left: 30px;
-    width: 150px;
-    height: 120px;
+} */
+.footer-image {
+    text-align: center;
+    padding: 30px 125px;
 }
 .footer-image h2 {
     color: white;
 }
 .footer-contact h2 {
-    align-items: center;
+    text-align: left;
     color: #fff;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
-    line-height: 29px;
 }
 
 .footer-contact address {
@@ -435,6 +432,7 @@ padding-top: 45px;
     font-size: 24px;
     line-height: 29px;
     color: white;
+   
 }
 
 .footer-discover p {
@@ -452,4 +450,7 @@ padding-top: 45px;
     height: 65px;
     background: #000B3E;
     color: #f3f3f3;
+}
+.footer-media a{
+    padding: 10px;
 }
