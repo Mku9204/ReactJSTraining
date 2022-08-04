@@ -218,6 +218,7 @@ h2 {
     background: #FF5403;
     margin: auto;
     gap: 10px;
+    margin-top: 15px;
 }
 
 .d-cover {
@@ -239,8 +240,11 @@ h2 {
     width: 100%;
     max-width: 100%;
     height: 879px;
+    margin-top: 30px;
 }
-
+.event-card p{
+    padding-top: 10px;
+}
 .event-card {
     padding: 50px;
     align-items: center;
@@ -309,6 +313,9 @@ h2 {
     line-height: 170%;
     color: #606060;
 }
+.event-card-child p{
+    padding-top: 20px;
+}
 
 .plan {
     display: flex;
@@ -322,8 +329,6 @@ h2 {
     height: 52px;
 
     background: #FF5403;
-
-    /* Inside auto layout */
     flex: none;
     order: 2;
     flex-grow: 0;
@@ -333,6 +338,7 @@ h2 {
     font-size: 18px;
     line-height: 22px;
     color: #FFFFFF;
+    margin-top: 30px;
 }
 
 .best-service {
@@ -398,7 +404,7 @@ padding-top: 45px;
 } */
 .footer-image {
     text-align: center;
-    padding: 30px 125px;
+    padding: 30px 45px;
 }
 .footer-image h2 {
     color: white;
@@ -452,5 +458,5 @@ padding-top: 45px;
     color: #f3f3f3;
 }
 .footer-media a{
-    padding: 10px;
+    padding: 5px;
 }
