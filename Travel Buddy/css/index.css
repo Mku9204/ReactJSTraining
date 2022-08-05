@@ -31,9 +31,10 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+
     padding: 30px 30px;
     font-size: 18px;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -45,14 +46,18 @@ ul {
 
 .nav-menu ul {
     display: flex;
+    flex-wrap: wrap;
+   
 }
 
 .nav-menu ul li {
     padding: 0 10px;
+    flex-wrap: wrap;
 }
 
 .nav-menu ul li a {
     padding-bottom: 2px;
+    flex-wrap: wrap;
 }
 
 .nav-menu ul li a:hover {
@@ -78,7 +83,6 @@ ul {
     background: #FF5403;
     color: #fff;
     font-size: 13px;
-    ;
 }
 
 .book {
@@ -130,7 +134,7 @@ ul {
 .top-place {
     position: relative;
     background: #f3f3f3;
-    border: 1px solid blueviolet;
+    border: 1px solid white;
     top: -30px;
     width: 80%;
     height: 120px;
@@ -151,7 +155,6 @@ ul {
 }
 
 .menu3 select {
-    display: flex;
     width: 140px;
     padding: 14px 10px;
     border-color: #2d93ea;
@@ -242,9 +245,11 @@ h2 {
     height: 879px;
     margin-top: 30px;
 }
-.event-card p{
+
+.event-card p {
     padding-top: 10px;
 }
+
 .event-card {
     padding: 50px;
     align-items: center;
@@ -313,7 +318,8 @@ h2 {
     line-height: 170%;
     color: #606060;
 }
-.event-card-child p{
+
+.event-card-child p {
     padding-top: 20px;
 }
 
@@ -344,7 +350,7 @@ h2 {
 .best-service {
     display: flex;
     flex-direction: column;
-padding-top: 45px;
+    padding-top: 45px;
 }
 
 .header1 {
@@ -387,6 +393,7 @@ padding-top: 45px;
     line-height: 170%;
     color: #626262;
 }
+
 .travel-footer {
     display: flex;
     flex-direction: row;
@@ -397,8 +404,10 @@ padding-top: 45px;
     padding: 90px 130px;
     color: #fff;
     margin-top: 100px;
-    
+    flex-wrap: wrap;
+
 }
+
 /* .travel-footer h2 {
     position: absolute;
 } */
@@ -406,9 +415,11 @@ padding-top: 45px;
     text-align: center;
     padding: 30px 45px;
 }
+
 .footer-image h2 {
     color: white;
 }
+
 .footer-contact h2 {
     text-align: left;
     color: #fff;
@@ -426,11 +437,13 @@ padding-top: 45px;
     padding-top: 20px;
     color: red;
 }
-.footer-discover{
+
+.footer-discover {
     display: flex;
     flex-direction: column;
-    
+
 }
+
 .footer-discover h2 {
     font-family: 'Inter';
     font-style: normal;
@@ -438,7 +451,7 @@ padding-top: 45px;
     font-size: 24px;
     line-height: 29px;
     color: white;
-   
+
 }
 
 .footer-discover p {
@@ -449,6 +462,7 @@ padding-top: 45px;
     line-height: 22px;
     padding: 15px;
 }
+
 .end {
     display: flex;
     align-items: center;
@@ -457,6 +471,85 @@ padding-top: 45px;
     background: #000B3E;
     color: #f3f3f3;
 }
-.footer-media a{
+
+.footer-media a {
     padding: 5px;
+}
+
+@media screen and (max-width:1100px) {
+    .top-place {
+        height: 200px;
+    }
+
+    .menu3 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 40px 15px;
+        height: 150px;
+        grid-column-gap: inherit;
+    }
+}
+
+.checkbtn {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media screen and (min-width:300px)and (max-width:800px) {
+    .conatiner{
+        position: absolute;
+    }
+    .top-place {
+        height: 300px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        position: relative;
+        gap: 50px;
+        padding: 30px 50px;
+    }
+    .checkbtn {
+        display: block;
+        font-size: 30px;
+    }
+
+    .menu3 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 40px 15px;
+        height: 260px;
+        grid-column-gap: inherit;
+    }
+
+    /* bars */
+    .nav-menu .ul-list {
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        width: 50%;
+        height: 300px;
+        border-bottom-left-radius: 10px;
+        background: rgba(247, 249, 249, 0.783);
+        top: 107px;
+        right: -50%;
+        transition: all .5s;
+        justify-content: center;
+
+    }
+    .nav-menu .ul-list li {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    #check:checked~.ul-list {
+        right: 0%;
+    }
 }

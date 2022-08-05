@@ -313,6 +313,12 @@ padding-top: 35px;
     color: #FFFFFF;
 }
 
+.best-service {
+    display: flex;
+    flex-direction: column;
+    padding-top: 45px;
+}
+
 .header1 {
     display: flex;
     flex-direction: column;
@@ -326,8 +332,14 @@ padding-top: 35px;
     flex-direction: row;
     align-items: center;
     align-content: center;
-    padding: 30px;
-    justify-content: space-between;
+    gap: 50px;
+    justify-content: center;
+    padding-top: 75px;
+}
+
+.best-service-card img {
+    width: 100%;
+    margin-top: 0 120px;
 }
 
 .best-service-card p {
@@ -336,9 +348,6 @@ padding-top: 35px;
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
-
-    /* identical to box height */
-    letter-spacing: 0.05em;
 }
 
 .best-service-card sub {
@@ -348,51 +357,41 @@ padding-top: 35px;
     font-weight: 300;
     font-size: 18px;
     line-height: 170%;
-
-    /* identical to box height, or 31px */
-    letter-spacing: 0.02em;
-
     color: #626262;
 }
-
 .travel-footer {
     display: flex;
     flex-direction: row;
+    align-content: center;
     justify-content: space-between;
     background-color: #19224D;
     align-items: flex-start;
-    padding: 108px 100px;
-    gap: 190px;
+    padding: 90px 130px;
     color: #fff;
+    margin-top: 100px;
+    flex-wrap: wrap;
+
 }
 
-.travel-footer h2 {
+/* .travel-footer h2 {
     position: absolute;
-}
-
-.footer-image img {
-    padding-left: 30px;
-    width: 150px;
-    height: 120px;
+} */
+.footer-image {
+    text-align: center;
+    padding: 30px 45px;
 }
 
 .footer-image h2 {
     color: white;
 }
 
-
 .footer-contact h2 {
-    align-items: center;
+    text-align: left;
     color: #fff;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
-    line-height: 29px;
-
-    /* identical to box height */
-    text-align: center;
-    letter-spacing: 0.05em;
 }
 
 .footer-contact address {
@@ -404,6 +403,12 @@ padding-top: 35px;
     color: red;
 }
 
+.footer-discover {
+    display: flex;
+    flex-direction: column;
+
+}
+
 .footer-discover h2 {
     font-family: 'Inter';
     font-style: normal;
@@ -412,9 +417,6 @@ padding-top: 35px;
     line-height: 29px;
     color: white;
 
-    /* identical to box height */
-    text-align: center;
-    letter-spacing: 0.05em;
 }
 
 .footer-discover p {
@@ -424,9 +426,8 @@ padding-top: 35px;
     font-size: 18px;
     line-height: 22px;
     padding: 15px;
-    /* identical to box height */
-    letter-spacing: 0.05em;
 }
+
 .end {
     display: flex;
     align-items: center;
@@ -434,4 +435,8 @@ padding-top: 35px;
     height: 65px;
     background: #000B3E;
     color: #f3f3f3;
+}
+
+.footer-media a {
+    padding: 5px;
 }
