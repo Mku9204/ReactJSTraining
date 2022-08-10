@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Button from './components/button'
-import myForm from './components/form';
+import MyForm from './components/form';
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
         {/* {Button('By By katam')} */}
        
       </header>
-      <myForm />
+      <MyForm />
     </div>
   );
 }
