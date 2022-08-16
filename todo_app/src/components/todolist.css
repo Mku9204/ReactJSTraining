@@ -1,0 +1,36 @@
+.todo-card {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.checkbox {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+    -webkit-appearance: none;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 15px;
+}
+
+.checkbox:checked {
+    background-color: rgb(13, 224, 84);
+}
+.checkbox input{
+    height: 15px;
+}
+.todo-button{
+    margin-left: 20px;
+}
+.todo-tasks{
+    margin-left: 25px;
+}

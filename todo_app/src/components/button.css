@@ -1,0 +1,20 @@
+a {
+
+    /* background-color: deepskyblue; */
+    color: white;
+    border: none;
+    margin-left: 15px;
+    /* width: 35px;
+    height: 30px; */
+    font-size: 20px;
+}
+
+a:link {
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    display: initial;
+    text-decoration: none;
+    background-color: rgb(12, 211, 234);
+    border-radius: 50px;
+}
