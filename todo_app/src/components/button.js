@@ -3,8 +3,8 @@ import './button.css'
 
 const button=(props)=>{
     return(
-        // <button type="Submit">{props.btn}</button>
-        <a href="#" style={props}>{props.btn}</a>
+        // <button >{props.btn}</button>
+        <a href="#" style={props} onClick={props.onClick}>{props.btn}</a>
     );
 }
 export default button;
