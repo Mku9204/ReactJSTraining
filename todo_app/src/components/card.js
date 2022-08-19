@@ -1,27 +1,21 @@
-import React from "react";
 import './card.css'
 import Button from './button'
 import Todo from "./tolist";
-const card = ({children}) => {
+import { useState } from 'react';
+const card = (props) => {
+
+   // const [data,setData] = useState(props.children)
+    const clearAll= ()=>{
+        console.log("clicked.......")
+    //data.setData([])
+       }
+  
     return (
         <div className="main-card">
             <div className="card-content">
-                {children}
-                
-                {/* <footer>
-                    <div className="footer-card">
-                        <p>You have 2 pending tasks</p>
-                        <Button name="btn" btn="X" />
-                    </div>
-                </footer>
- */}
+                {props.children}
             </div>
-            <footer>
-                    <div className="footer-card">
-                        <p>You have 2 pending tasks</p>
-                        <Button name="btn" btn="x"  background-color="red"/>
-                    </div>
-                </footer>
+           
 
 
         </div>
