@@ -2,8 +2,9 @@ import "./App.css";
 import Card from "./components/card";
 import Button from "./components/button";
 import Todo from "./components/tolist";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Input from "./components/Input";
+import swal from "sweetalert";
 function App() {
   const todos = [];
   //add data
@@ -17,9 +18,10 @@ function App() {
       task: todo,
     };
     if (newData.task === "") {
-      alert("enter data");
+      swal("Bad Request!", "Please enter your Todo", "error");
     } else {
       setData([newData, ...data]);
+      swal("Good job!", "Your Todo added Successfully", "success");
       setTodo("");
     }
   }
@@ -33,7 +35,24 @@ function App() {
   };
 
   const clearAll = () => {
-    setData([]);
+    // setData([]);
+
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
+          data: setData([]),
+        });
+      } else {
+        swal("Your imaginary file is safe!");
+      }
+    });
   };
   //update todo
 
@@ -46,9 +65,10 @@ function App() {
     });
     setData([...myData]);
   };
-  const onTodoChange = (value) => {
-    console.log(value);
-  };
+  useEffect(() => {
+    swal("Welcome in Todo app", "Add your todo and complete it......");
+  }, []);
+
   return (
     <div className="App">
       <Card>
@@ -86,7 +106,6 @@ function App() {
                   // getState={(state) => console.log(state, "state")}
                   deleteTodo={deleteTodo}
                   updateTodo={updateTodo}
-                  onTodoChange={onTodoChange}
                 />
               );
             })}
