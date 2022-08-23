@@ -4,7 +4,7 @@
 }
 .vertical{
   border-left: 2px solid rgb(110, 108, 108);
-  margin: -5px;
+  margin: 5px;
 }
 .main-card {
     display: flex;
@@ -13,17 +13,23 @@
     height: auto;
     /* border: 2px solid rgb(110, 108, 108); */
     border-radius: 40px;
-    background-color: white;
+    background-color: rgb(228, 225, 225);
     width: 40%;
     align-items: center;
     align-content: center;
   }
   .balance-data{
     display: flex;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 30px;
     justify-content: space-evenly;
-    padding: 15px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 5px 5px rgb(110, 108, 108);
+  }
+  .card-content{
+    width: -webkit-fill-available;
+    padding: 25px;
   }
   .income  p{
     padding-top: 15px;
@@ -43,24 +49,39 @@
     margin-bottom: -13px;
   }
   .history-crad{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 30px;
     margin-top: 15px;
     display: flex;
     justify-content: space-between;
-    padding: 0px 20px;
+    padding: 0px 10px;
+    background-color: white;
+    box-shadow: 5px 5px rgb(110, 108, 108);
   }
-
+.history-crad-no{
+  border-radius: 30px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0px 75px;
+  background-color: white;
+  box-shadow: 5px 5px rgb(110, 108, 108);
+  text-align: center;
+}
   .expense-text .nText{
    
-    width: 310px;
+    width: 100%;
     margin-top: 10px;
     border-radius: 30px;
+    box-shadow: 5px 5px rgb(110 108 108);
+    height: 20px
 }
 .Amount-text .Namount{
-  width: 310px;
+  width: 100%;
   height: 25px;
   border-radius: 30px;
+  box-shadow: 5px 5px rgb(110 108 108);
+    height: 20px
 }
 .Amount-text p{
   margin-bottom: -5px;
