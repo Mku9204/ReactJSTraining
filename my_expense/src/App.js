@@ -5,12 +5,12 @@ import Input from './components/util/input'
 import Button from './components/util/button'
 import { useState } from 'react';
 function App() {
-  const [tIncome,setTotalIncome]=useState(0.00)
+  const [totalBlance,setTotalBlance]=useState(0.00)
   const[data,setData]=useState([])
   const [text,setText]=useState("")
   const [amount,setAmount]=useState(0.00)
-  const [restBlance,setRestBlance]=useState(0.00)
-  const [negBlance,setNegBlance]=useState(0.00)
+  const [icomeBlance,setIncomeBlance]=useState(0.00)
+  const [expBlance,setExpBlance]=useState(0.00)
 
   const getText=(e)=>setText(e.target.value);
   const getAmount=(e)=>setAmount(e.target.value)
@@ -23,14 +23,15 @@ function App() {
       amount: amount,
     }; 
     setData([expenseData,...data])
-    if(amount>0){
-      setTotalIncome(Number(tIncome)+Number(amount))
-      setRestBlance(Number(restBlance)+Number(amount))
-    }else if(amount<0){
-        setNegBlance(Number(negBlance)-Number(amount))
-        setRestBlance(Number(restBlance)+Number(amount)) 
-      }else{
-        console.log("lol")
+    setTotalBlance(Number(totalBlance)+Number(amount))
+    console.log('income balnce')
+    if(amount<0){
+      console.log('neg balnce')
+      setExpBlance(Number(expBlance)+Number(amount))
+    }else{
+      console.log('rest balnce')
+      setIncomeBlance(Number(icomeBlance)+Number(amount))
+       
       }
       setText("")
       setAmount(0.00)    
@@ -45,7 +46,7 @@ function App() {
             Your balance
           </h3>
           <h1>
-          {restBlance}.Rs
+          {totalBlance}.Rs
           </h1>
         </div>
         <div className='balance-data'>
@@ -53,21 +54,21 @@ function App() {
           <h3>
             INCOME
           </h3>
-          <p>{tIncome} Rs.</p>
+          <p>{icomeBlance} Rs.</p>
           </div>
           <div className='vertical'></div>
           <div className='expenses'>
           <h3>
             EXPENSE
           </h3>
-          <p>{negBlance} Rs.</p>
+          <p>{expBlance} Rs.</p>
           </div>
         </div>
         <div className='history'>
             <h3>History</h3>
             <hr/>
             {data.map((trx,index)=>(
-              <div className='history-crad'>
+              <div className='history-crad' key={index}>
                 <p>{trx.text}</p>
                 <p>{trx.amount} Rs.</p>
             </div>
