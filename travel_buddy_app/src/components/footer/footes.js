@@ -12,9 +12,10 @@ const Footer = (props) => {
                     sx={{
                         display: 'flex',
                         flexDirection: 'row',
-                        padding: '60px',
+                        padding: '90px',
                         alignItems: 'center',
                         alignContent: 'center',
+                        justifyContent: 'space-between'
                     }}
                 >
                     <Grid item xs={3}>
@@ -25,19 +26,37 @@ const Footer = (props) => {
                             image={Vector}
                             alt="green iguana"
                         />
+                        <Typography sx={{ fontSize: 44, color: 'white', }}
+                            gutterBottom>
+                            Travel Buddy
+                        </Typography>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={3}>
                         <Box
                             sx={{
+                                color: 'white',
+                                display: 'flex',
+                                flexDirection: 'column',
 
                             }}
                         >
-                            <Typography sx={{ fontSize: 14, color: 'white', }}
+                            <Typography sx={{
+                                fontSize: 14, color: 'white',
+                                display: 'flex',
+                                flexDirection: 'column',
+                            }}
                                 gutterBottom>
                                 DISCOVER DESTINATION
                             </Typography>
-                            <List>
-                                <ListItem>
+                            <List sx={{
+                                color: 'white',
+                            }}>
+                                <ListItem sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    webKitAlignItems: 'flex-start',
+                                    alignItems: 'flex-start'
+                                }}>
                                     <ListItemText>Bali</ListItemText>
                                     <ListItemText>Karimun Jawa</ListItemText>
                                     <ListItemText>Jepara</ListItemText>
@@ -49,13 +68,20 @@ const Footer = (props) => {
                         </Box>
                     </Grid>
                     <Grid item xs={3}>
-                        <Box>
+                        <Box sx={{
+                            display: 'flex',
+
+                            flexDirection: 'column',
+                        }}>
                             <Typography sx={{ fontSize: 14, color: 'white', }}
                                 gutterBottom>
                                 CONTACT US
                             </Typography>
                             <Box sx={{
-                                color: 'white'
+                                color: 'white',
+                                display: 'flex',
+                                alignItems: 'center',
+                                alignContent: 'center',
                             }}>
                                 <address>
                                     <p>24 Shipley St.Arvada, CO 80003</p>
@@ -63,7 +89,9 @@ const Footer = (props) => {
                                     <p>TravelBuddy@gmail.com</p>
                                 </address>
                             </Box>
-                            <Box>
+                            <Box sx={{
+
+                            }}>
                                 <Typography sx={{ fontSize: 14, color: 'orange', }}
                                     gutterBottom>
                                     Social media
