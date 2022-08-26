@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Card from './components/card/card.js'
 import Input from './components/util/input'
 import Button from './components/util/button'
 import { useState } from 'react';
+import inputStyle from './components/util/input_style';
 function App() {
   const [totalBlance, setTotalBlance] = useState(0.00)
   const [data, setData] = useState([])
@@ -99,11 +99,27 @@ function App() {
           <hr />
           <div className='expense-text'>
             <label for="nText">Text</label>
-            <br />  <Input type="text" value={text} placeholder="Enter Text ...." name="nText" className="nText" onChange={getText} />
+            <br />
+            {/* <Input type="text" value={text} placeholder="Enter Text ...." name="nText" className="nText" onChange={getText} />
+           */}
+            <Input
+              classes={inputStyle.nText1}
+              label="Enter Text ...."
+              variant="outlined"
+              inputProps={{ inputMode: 'text', pattern: '[0-9]*' }}
+              fullWidth
+              size="small" />
           </div>
           <div className='Amount-text'>
             <p for="Amount">Amount<br />(negative-expense,posrtive-income)</p>
-            <br /><Input value={amount} type="number" placeholder="Enter Amount ...." name="Amount" className="Namount" onChange={getAmount} />
+            <br />
+            <Input value={amount}
+              size="small"
+              placeholder="Rs. 1000"
+              label="Enter Amount ...." name="Amount"
+              className="Namount1" onChange={getAmount}
+              inputProps={{ inputMode: 'number', pattern: '[0-9]*' }}
+              fullWidth />
           </div>
           <div className='btn'>
             <Button btn="Add Transaction" onClick={addExpense} />
