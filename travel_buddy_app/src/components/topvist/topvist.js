@@ -5,7 +5,7 @@ import React from "react";
 
 const Topvist = (props) => {
     return (
-        <Container fixed>
+        <Container maxWidth={false}>
             <Typography
                 variant="h4"
                 component="h2"

@@ -5,7 +5,7 @@ import React from "react";
 
 const Tophotel = (props) => {
     return (
-        <Container fixed>
+        <Container maxWidth={false}  >
             <Typography
                 variant="h4"
                 component="h2"

@@ -13,6 +13,7 @@ const Navbar = () => {
             <Link to='/'> <li style={{ listStyle: 'none', }}>Home</li></Link>
             <Link to='/about'> <li style={{ listStyle: 'none', }}>About</li></Link>
             <Link to='/contact'> <li style={{ listStyle: 'none', }}>Contact</li></Link>
+            <Link to="/does-not-exist" />
 
         </ul>
     )
