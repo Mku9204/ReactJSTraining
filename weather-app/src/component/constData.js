@@ -1,0 +1,1 @@
+export const Geo_Api_Url = 'https://wft-geo-db.p.rapidapi.com/v1/geo'

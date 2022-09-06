@@ -3,6 +3,9 @@ import { Card, CardContent, CardMedia, Grid, List, ListItem, ListItemText, Typog
 import { Box } from "@mui/system";
 import React from "react";
 import Vector from '../../assests/img/Vector.png'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
 const Footer = (props) => {
     return (
         <Box sx={{ paddingTop: '100px' }}>
@@ -96,7 +99,9 @@ const Footer = (props) => {
                                     gutterBottom>
                                     Social media
                                 </Typography>
-                                <FontAwesomeIcon icon='fab fa-facebook' />
+                                <FacebookIcon sx={{ color: 'white', padding: '5px' }} />
+                                <InstagramIcon sx={{ color: 'white', padding: '5px' }} />
+                                <TwitterIcon sx={{ color: 'white', padding: '5px' }} />
                             </Box>
                         </Box>
                     </Grid>

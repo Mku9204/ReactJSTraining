@@ -4,7 +4,12 @@ import CardMedia from '@mui/material/CardMedia';
 import { Box, Button, CardActionArea, Typography } from '@mui/material';
 const Card1 = (props) => {
     return (
-        <Card sx={{ height: '95vh', paddingTop: `${props.pd}`, backgroundColor: `${props.bcb}` }} >
+        <Card sx={{
+            // height: '95vh',
+            paddingTop: `${props.pd}`,
+            backgroundColor: `${props.bcb}`,
+            height: `${props.height}`
+        }} >
             <Box sx={{
                 backgroundImage: `url(${props.image})`,
                 backgroundSize: '100% 100%',

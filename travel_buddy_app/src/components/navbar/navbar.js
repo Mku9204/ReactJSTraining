@@ -7,35 +7,46 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-
 import CardMedia from '@mui/material/CardMedia';
+import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const pages = ['Home', 'About', 'Packages', 'Places', 'Contact'];
+//const pages = ['Home', 'About', 'Packages', 'Places', 'Contact'];
+
+const pages = [
+    { title: 'Home', path: '/' },
+    { title: 'About', path: '/about' },
+    { title: 'Packages', path: '/package' },
+    { title: 'Places', path: '/places' },
+    { title: 'Contact', path: '/contact' },
+
+];
+
+
+
 const settings = ['Home', 'About', 'Packages', 'Places', 'Contact'];
 
 const NavBar = (props) => {
+    const history = useHistory();
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+    // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
+
 
     const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
+
+        setAnchorElNav(null)
+
     };
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
+    const handlePath = (path) => {
+        history.push(`${path}`)
+    }
 
     return (
         <AppBar position="static"
@@ -101,9 +112,12 @@ const NavBar = (props) => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                            {pages.map((page, index) => (
+                                <MenuItem
+                                    key={index}
+                                    onClick={() => handlePath(page.path)}
+                                >
+                                    <Typography textAlign="center">{page.title}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -114,7 +128,6 @@ const NavBar = (props) => {
                         alt="green iguana"
                         sx={{ height: '55px', width: '52px', display: { xs: 'flex', md: 'none' } }}
                     />
-                    {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
                     <Typography
                         variant="h5"
                         noWrap
@@ -135,20 +148,22 @@ const NavBar = (props) => {
                         Travel Buddy
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center' } }}>
-                        {pages.map((page) => (
+                        {pages.map((page, index) => (
                             <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
+                                key={index}
+                                onClick={() => handlePath(page.path)}
                                 sx={{ my: 2, display: 'block', color: '#696969' }}
                             >
-                                {page}
+                                {page.title}
                             </Button>
+
                         ))}
+
                     </Box>
                     <Button variant="contained" sx={{ backgroundColor: '#ff5733' }}>Book now</Button>
                 </Toolbar>
             </Container>
-        </AppBar>
+        </AppBar >
     );
 };
 export default NavBar;
