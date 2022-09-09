@@ -15,6 +15,10 @@ const FbRoute = () => {
     return (
         <Routes>
             <Route path="/" element={
+                <Login />
+            }
+            />
+            <Route path="/home" element={
                 <GridLayout>
                     <Home />
                 </GridLayout>}
@@ -49,10 +53,9 @@ const FbRoute = () => {
                     <Live />
                 </GridLayout>}
             />
-            <Route path="/login" element={
-                <GridLayout>
-                    <Login />
-                </GridLayout>}
+            <Route path="/signup" element={
+                <SignUp />
+            }
             />
 
         </Routes>
