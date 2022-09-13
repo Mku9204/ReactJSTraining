@@ -7,6 +7,11 @@ import Avatar from '@mui/material/Avatar';
 import ImageIcon from '@mui/icons-material/Image';
 import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import { Divider, Typography } from '@mui/material';
+import A1 from '../assests/j1.jpg'
+import A4 from '../assests/j2.jpg'
+import A2 from '../assests/j3.png'
+import A3 from '../assests/j4.jpg'
 
 
 const OnlineContact = () => {
@@ -22,30 +27,42 @@ const OnlineContact = () => {
             lineHeight: '21px',
             color: ' #203758',
         }}>
-            <ListItem>
+            <ListItem alignItems="flex-start">
                 <ListItemAvatar>
-                    <Avatar>
-                        <ImageIcon />
-                    </Avatar>
+                    <Avatar alt="Remy Sharp" src={A1} />
                 </ListItemAvatar>
-                <ListItemText primary="Abhi" />
+                <ListItemText
+                    primary="Brunch this weekend?"
+                />
             </ListItem>
-            <ListItem>
+            <Divider variant="inset" component="li" />
+            <ListItem alignItems="flex-start">
                 <ListItemAvatar>
-                    <Avatar>
-                        <WorkIcon />
-                    </Avatar>
+                    <Avatar alt="Travis Howard" src={A2} />
                 </ListItemAvatar>
-                <ListItemText primary="Akash" />
+                <ListItemText
+                    primary="Summer BBQ"
+                />
             </ListItem>
-            <ListItem>
+            <Divider variant="inset" component="li" />
+            <ListItem alignItems="flex-start">
                 <ListItemAvatar>
-                    <Avatar>
-                        <BeachAccessIcon />
-                    </Avatar>
+                    <Avatar alt="Cindy Baker" src={A3} />
                 </ListItemAvatar>
-                <ListItemText primary="Sandeep" />
+                <ListItemText
+                    primary="Oui Oui"
+                />
             </ListItem>
+            <Divider variant="inset" component="li" />
+            <ListItem alignItems="flex-start">
+                <ListItemAvatar>
+                    <Avatar alt="Cindy Baker" src={A3} />
+                </ListItemAvatar>
+                <ListItemText
+                    primary="Oui Oui"
+                />
+            </ListItem>
+
         </List >
     );
 }

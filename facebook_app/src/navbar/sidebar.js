@@ -75,7 +75,11 @@ export default function MiniDrawer() {
 
 
     return (
-        <Box sx={{ display: 'flex' }} >
+        <Box sx={{
+            display: 'flex',
+            // marginTop: '-10px',
+            // height: '100vh'
+        }} >
 
             <Drawer variant="permanent" open={open} sx={{
                 "& .MuiDrawer-paper": {

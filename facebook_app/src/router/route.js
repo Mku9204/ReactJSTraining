@@ -10,49 +10,21 @@ import Notification from "../pages/notification";
 import SignUp from "../pages/singup";
 import Watch from "../pages/watch";
 import GridLayout from "../util/gridLayout";
+import PrivateRoute from "./privateRoute";
 
 const FbRoute = () => {
     return (
         <Routes>
-            <Route path="/" element={
-                <Login />
-            }
-            />
-            <Route path="/home" element={
-                <GridLayout>
-                    <Home />
-                </GridLayout>}
-            />
-            <Route path="/notification" element={
-                <GridLayout>
-                    <Notification />
-                </GridLayout>}
-            />
-            <Route path="/watch" element={
-                <GridLayout>
-                    <Watch />
-                </GridLayout>}
-            />
-            <Route path="/marketpalce" element={
-                <GridLayout>
-                    <Market />
-                </GridLayout>}
-            />
-            <Route path="/group" element={
-                <GridLayout>
-                    <Group />
-                </GridLayout>}
-            />
-            <Route path="/messanger" element={
-                <GridLayout>
-                    <Messanger />
-                </GridLayout>}
-            />
-            <Route path="/live" element={
-                <GridLayout>
-                    <Live />
-                </GridLayout>}
-            />
+            <Route path="/" element={<Login />} />
+            <Route element={<PrivateRoute />}>
+                <Route path="/home" element={<Home />} />
+                <Route path="/notification" element={<Notification />} />
+                <Route path="/watch" element={<Watch />} />
+                <Route path="/marketpalce" element={<Market />} />
+                <Route path="/group" element={<Group />} />
+                <Route path="/messanger" element={<Messanger />} />
+                <Route path="/live" element={<Live />} />
+            </Route>
             <Route path="/signup" element={
                 <SignUp />
             }

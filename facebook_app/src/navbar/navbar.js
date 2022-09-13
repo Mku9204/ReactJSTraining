@@ -15,19 +15,23 @@ import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import A1 from '../../src/assests/a1.jpg'
 import HorizontalSplitIcon from '@mui/icons-material/HorizontalSplit';
 import SearchIcon from '@mui/icons-material/Search';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { getAuth, signOut } from "firebase/auth";
+import firebaseConfig from '../util/firebase';
+import LocalStorageService from '../util/localStorageService';
+const auth = getAuth();
 
+//'Profile', 'Account', 'Dashboard',
 //const pages = ['Home', 'Notification', 'Watch', 'Market Palce', 'Group', 'Messanger', 'Live', 'Login'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Logout'];
 const pages = [
-    { title: "Home", path: "/" },
+    { title: "Home", path: "/home" },
     { title: "Notification", path: "/notification" },
     { title: "Watch", path: "/watch" },
     { title: "Market Palce", path: "/marketpalce" },
     { title: "Group", path: "/group" },
     { title: "Messanger", path: "/messanger" },
     { title: "live", path: "/live" },
-    { title: "Login / Sing up", path: "/login" },
 ];
 
 const ResponsiveAppBar = () => {
@@ -52,6 +56,19 @@ const ResponsiveAppBar = () => {
     const handlePath = (path) => {
         navigate(`${path}`);
     };
+
+    const Signout = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+
+
+            navigate("/")
+            LocalStorageService.clearToken()
+            // localStorage.clear()
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
 
     return (
         <AppBar position="static" sx={{ backgroundColor: 'white' }}>
@@ -178,7 +195,7 @@ const ResponsiveAppBar = () => {
                         >
                             {settings.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
+                                    <Typography textAlign="center" onClick={Signout}>{setting}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>

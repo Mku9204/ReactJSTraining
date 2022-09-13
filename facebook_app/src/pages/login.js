@@ -8,9 +8,10 @@ import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import firebaseConfig from "../util/firebase";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, setPersistence, browserSessionPersistence } from "firebase/auth";
 import { async } from "@firebase/util";
 import LoadingButton from '@mui/lab/LoadingButton';
+import LocalStorageService from "../util/localStorageService";
 
 const Login = () => {
     const [snakData, setSnakData] = useState({});
@@ -29,10 +30,6 @@ const Login = () => {
         check: Yup.string()
             .required("Please check the box")
     });
-
-    // const goToHome = () => {
-    //     navigate('/home')
-    // }
     function mapAuthCodeToMessage(authCode) {
         switch (authCode) {
             case "auth/wrong-password":
@@ -49,15 +46,14 @@ const Login = () => {
                 return "oooh something went wrong...!";
         }
     }
+
     const auth = getAuth();
-    const signInWithEmailAndPasswordFb = async (email, password) => {
+    const signInWithEmailAndPasswordFb = (email, password) => {
         setLoding(true)
-        await signInWithEmailAndPassword(auth, email, password)
+        signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-
-                // ...
                 setSnakData({ type: 'success', msg: 'you have successfully login', date: new Date() })
 
                 navigate('/home')
@@ -71,7 +67,27 @@ const Login = () => {
             })
             .finally(() => { setLoding(false) })
         setSnakData({})
+
     }
+    const per = async (email, password) => {
+        await setPersistence(auth, browserSessionPersistence)
+            .then(() => {
+                LocalStorageService.setToken(true)
+                // Existing and future Auth states are now persisted in the current
+                // session only. Closing the window would clear any existing state even
+                // if a user forgets to sign out.
+                // ...
+                // New sign-in will be persisted with session persistence.
+                return signInWithEmailAndPasswordFb(email, password);
+            })
+            .catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+    }
+
+
 
     const provider = new GoogleAuthProvider();
     function signWithGoogle() {
@@ -210,7 +226,8 @@ const Login = () => {
                             validationSchema={validDationData}
                             onSubmit={(values) => {
                                 // alert(JSON.stringify(values, null, 2));
-                                signInWithEmailAndPasswordFb(values.email, values.password)
+                                //signInWithEmailAndPasswordFb(values.email, values.password)
+                                per(values.email, values.password)
                             }}
                         >
                             {(props) => (
