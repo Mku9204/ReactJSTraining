@@ -12,12 +12,14 @@ import { GoogleAuthProvider, signInWithPopup, setPersistence, browserSessionPers
 import { async } from "@firebase/util";
 import LoadingButton from '@mui/lab/LoadingButton';
 import LocalStorageService from "../util/localStorageService";
+import { useGetUserById } from "../hooks/getUserhook";
 
 const Login = () => {
     const [snakData, setSnakData] = useState({});
     const [load, setLoding] = useState(false);
     const navigate = useNavigate();
     const [open, setOpen] = React.useState(false);
+    const { getUserById, user, isLoading } = useGetUserById()
 
     const validDationData = Yup.object().shape({
 
@@ -54,6 +56,7 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                getUserById(user.uid);
                 setSnakData({ type: 'success', msg: 'you have successfully login', date: new Date() })
 
                 navigate('/home')
@@ -98,6 +101,8 @@ const Login = () => {
                 const token = credential.accessToken;
                 // The signed-in user info.
                 const user = result.user;
+                LocalStorageService.setCurrentUser(user)
+                navigate('/home')
                 // ...
             }).catch((error) => {
                 // Handle Errors here.

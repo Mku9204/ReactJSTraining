@@ -78,7 +78,8 @@ export default function MiniDrawer() {
         <Box sx={{
             display: 'flex',
             // marginTop: '-10px',
-            // height: '100vh'
+            height: 'calc(100vh - 68px)',
+
         }} >
 
             <Drawer variant="permanent" open={open} sx={{
@@ -86,6 +87,7 @@ export default function MiniDrawer() {
                     // width: drawerWidth,
                     boxSizing: "border-box",
                     position: "relative",
+                    justifyContent: 'space-between'
                 },
             }}>
                 {/* <DrawerHeader >
@@ -227,7 +229,6 @@ export default function MiniDrawer() {
                             aria-label="search"
                             fill="#F0F7FF"
                             sx={{
-                                my: 4,
                                 color: "#1877F2",
                             }}
                         >

@@ -64,7 +64,6 @@ const ResponsiveAppBar = () => {
 
             navigate("/")
             LocalStorageService.clearToken()
-            // localStorage.clear()
         }).catch((error) => {
             // An error happened.
         });

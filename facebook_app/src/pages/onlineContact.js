@@ -21,45 +21,78 @@ const OnlineContact = () => {
             maxWidth: 360,
             bgcolor: 'background.paper',
             fontFamily: 'Montserrat',
-            fontStyle: 'normal',
-            fontWeight: ' 500',
-            fontSize: '17px',
-            lineHeight: '21px',
-            color: ' #203758',
+            fontSize: '13px',
+            color: ' #788292',
+            // padding: '0px'
         }}>
-            <ListItem alignItems="flex-start">
+            <ListItem alignItems="flex-start" sx={{
+                padding: '0px 0px 0px 16px'
+            }}>
                 <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src={A1} />
+                    <Avatar alt="Remy Sharp" src={A1} sx={{
+                        width: 28,
+                        height: 28
+                    }} />
                 </ListItemAvatar>
-                <ListItemText
-                    primary="Brunch this weekend?"
+                <ListItemText sx={{ alignSelf: 'center' }}
+                    primary="Brunch "
                 />
             </ListItem>
-            <Divider variant="inset" component="li" />
-            <ListItem alignItems="flex-start">
+            <Divider />
+            <ListItem alignItems="flex-start" sx={{
+                padding: '0px 0px 0px 16px'
+            }}>
                 <ListItemAvatar>
-                    <Avatar alt="Travis Howard" src={A2} />
+                    <Avatar alt="Travis Howard" src={A2} sx={{
+                        width: 28,
+                        height: 28
+                    }} />
                 </ListItemAvatar>
-                <ListItemText
-                    primary="Summer BBQ"
+                <ListItemText sx={{ alignSelf: 'center' }}
+                    primary="Summer "
                 />
             </ListItem>
-            <Divider variant="inset" component="li" />
-            <ListItem alignItems="flex-start">
+            <Divider />
+            <ListItem alignItems="flex-start" sx={{
+                padding: '0px 0px 0px 16px'
+            }}>
                 <ListItemAvatar>
-                    <Avatar alt="Cindy Baker" src={A3} />
+                    <Avatar alt="Cindy Baker" src={A3} sx={{
+                        width: 28,
+                        height: 28
+                    }} />
                 </ListItemAvatar>
-                <ListItemText
-                    primary="Oui Oui"
+                <ListItemText sx={{ alignSelf: 'center' }}
+                    primary="Oui "
                 />
             </ListItem>
-            <Divider variant="inset" component="li" />
-            <ListItem alignItems="flex-start">
+            <Divider />
+            <ListItem alignItems="flex-start" sx={{
+                padding: '0px 0px 0px 16px'
+            }}>
                 <ListItemAvatar>
-                    <Avatar alt="Cindy Baker" src={A3} />
+                    <Avatar alt="Cindy Baker" src={A3} sx={{
+                        width: 28,
+                        height: 28
+                    }} />
                 </ListItemAvatar>
-                <ListItemText
-                    primary="Oui Oui"
+                <ListItemText sx={{ alignSelf: 'center' }}
+                    primary="Oui "
+                />
+            </ListItem>
+
+            <Divider />
+            <ListItem alignItems="flex-start" sx={{
+                padding: '0px 0px 0px 16px'
+            }}>
+                <ListItemAvatar>
+                    <Avatar alt="Cindy Baker" src={A3} sx={{
+                        width: 28,
+                        height: 28
+                    }} />
+                </ListItemAvatar>
+                <ListItemText sx={{ alignSelf: 'center' }}
+                    primary="Oui "
                 />
             </ListItem>
 

@@ -16,24 +16,16 @@ export default function CardEvent(props) {
     return (
         <Card
             sx={{
-                width: "100%",
-                mt: 2,
-                height: 170,
-                maxWidth: "fit-content",
+                maxWidth: 200,
+                // maxHeight: 200,
+                // width: "190px",
+                height: "170px",
                 backgroundImage: `url(${props.backgroundImageEvent})`,
-                // https://source.unsplash.com/random?event
-
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "bottom",
                 display: "flex",
                 justifyContent: "center",
-                borderRadius: "10px",
-                "&:hover": {
-                    // color: "#1877F2",
-                    // fontWeight: "bold",
-                    transform: "scale(1.1)",
-                },
             }}
         >
             <CardActionArea
@@ -42,7 +34,7 @@ export default function CardEvent(props) {
                     flexDirection: "column",
                     justifyContent: "flex-end",
                     alignItems: "center",
-                    height: "100%",
+                    // height: "100%",
                 }}
             >
                 <Box
@@ -50,19 +42,26 @@ export default function CardEvent(props) {
                     sx={{
                         display: "flex",
                         flexDirection: "column",
-                        justifyContent: "center",
+                        justifyContent: "space-between",
                         alignItems: "left",
+                        // padding: "20px",
+                        // boxShadow: `10px 10px 10px rgba(30,30,30,0.5)`,
+                        // mb: 2,
+                        // gap: 1,
                         color: "white",
-                        height: "-webkit-fill-available",
+                        height: "100%",
                     }}
                 >
                     <Box
                         sx={{
-                            padding: "20px",
+                            padding: "8px 15px",
                             textAlign: "left",
-                            height: "45%",
+                            gap: "10px",
+                            height: "100%",
                             display: "flex",
                             flexDirection: "column",
+                            flexGrow: "1",
+                            justifyContent: "space-between",
 
                             // mb: 1,
                         }}
@@ -71,11 +70,12 @@ export default function CardEvent(props) {
                             sx={{
                                 display: "flex",
                                 flexDirection: "row",
-                                // gap: "10px",
+                                gap: "10px",
                                 alignItems: "center",
                                 fontFamily: "Montserrat",
                             }}
                         >
+                            {/* <FastfoodRoundedIcon fontSize="12px" /> */}
                             {props.eventlogo}
                             <Typography variant="header" fontSize="16px">
                                 {props.eventhead}
@@ -83,7 +83,7 @@ export default function CardEvent(props) {
                         </Box>
                         <Typography fontSize="14px" sx={{ fontFamily: "Montserrat" }}>
                             {props.eventtext}
-
+                            {/* Start watching with friends and family */}
                         </Typography>
                         <Button
                             variant="contained"
@@ -123,20 +123,17 @@ export default function CardEvent(props) {
                         >
                             <Avatar
                                 alt="Remy Sharp"
-                                src="https://source.unsplash.com/random?face
-"
+                                src="https://thebeforenews.com/wp-content/uploads/2022/08/Funny-PFP-1.jpg"
                                 sx={{ border: "2px solid #1877F2", width: 28, height: 28 }}
                             />
                             <Avatar
                                 alt="Remy"
-                                src="https://source.unsplash.com/random?people
-"
+                                src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1557453152.4514_U2asE8_n.jpg"
                                 sx={{ border: "2px solid #1877F2", width: 28, height: 28 }}
                             />
                             <Avatar
                                 alt="Remy S"
-                                src="https://source.unsplash.com/random?icon
-"
+                                src="https://whatifgaming.com/wp-content/uploads/2021/10/336c914d87fa4f12f61959589acf6f6c.jpg"
                                 sx={{ border: "2px solid #1877F2", width: 28, height: 28 }}
                             />
                         </AvatarGroup>

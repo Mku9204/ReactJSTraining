@@ -7,8 +7,10 @@ import * as Yup from "yup";
 import LoginImg from '../assests/login.jpg'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import firebaseConfig from "../util/firebase";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, doc, setDoc } from "firebase/firestore";
 import { async } from "@firebase/util";
+
+
 
 const SignUp = () => {
     const validDationData = Yup.object().shape({
@@ -17,7 +19,7 @@ const SignUp = () => {
             .max(20, "Max 20 Chracter ..!")
             .required("Required"),
         lastName: Yup.string()
-            .min(6, "Mininum 6 Chracter required..!")
+            .min(3, "Mininum 6 Chracter required..!")
             .max(15, "Max 15 Chracter ..!!")
             .required("Required"),
         email: Yup.string().email("Invalid email").required("Required"),
@@ -39,16 +41,33 @@ const SignUp = () => {
         check: Yup.boolean().oneOf([true], "accept the terms and condition")
     });
     const navigate = useNavigate();
-    const goToLogin = () => {
-        navigate('/login')
-    }
+
     const auth = getAuth();
-    const createUserWithEmailAndPasswordFb = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
+    //databse storage
+    const db = getFirestore(firebaseConfig.firebase);
+
+    //setData method
+    const saveData = async (user) => {
+        await setDoc(doc(db, "users", `${user.uid}`), {
+            ...user
+        });
+    }
+
+    const createUserWithEmailAndPasswordFb = (values) => {
+        createUserWithEmailAndPassword(auth, values.email, values.password)
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                saveData({
+                    uid: user.uid,
+                    firstName: values.firstName,
+                    lastName: values.lastName,
+                    email: values.email,
+                    gender: values.gender,
+                    status: values.status,
+                })
                 // ...
+                navigate('/')
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -57,26 +76,25 @@ const SignUp = () => {
             });
     }
 
-    //databse storage
-    const db = getFirestore(firebaseConfig.app);
-    const saveData = async (values) => {
-        try {
-            const docRef = await addDoc(collection(db, "users"), {
-                firstName: values.firstName,
-                lastName: values.lastName,
-                email: values.email,
-                password: values.password,
-                gender: values.gender,
-                status: values.status,
-                conpassword: values.conpassword,
 
-            });
-            console.log("Document written with ID: ", docRef.id);
-        } catch (e) {
-            console.error("Error adding document: ", e);
-        }
-        alert('data save')
-    }
+
+
+    //Colllection method
+    // const saveData = async (user) => {
+    //     try {
+    //         const docRef = await addDoc(collection(db, "users"), {
+    //             firstName: user.firstName,
+    //             lastName: user.lastName,
+    //             email: user.email,
+    //             gender: user.gender,
+    //             status: user.status,
+    //         });
+    //         console.log("Document written with ID: ", docRef.id);
+    //     } catch (e) {
+    //         console.error("Error adding document: ", e);
+    //     }
+    //     navigate('/')
+    // }
 
 
     const [agree, setAgree] = useState('false')
@@ -124,13 +142,13 @@ const SignUp = () => {
                             }}
                             validationSchema={validDationData}
                             onSubmit={(values) => {
-                                //alert(JSON.stringify(values, null, 2));
-                                saveData(values)
-                                createUserWithEmailAndPasswordFb(values.email, values.password)
+                                //alert(JSON.stringify(user, null, 2));
+                                createUserWithEmailAndPasswordFb(values)
 
                             }}
                         >
                             {(props) => (
+
                                 <Form
                                     autoComplete="off"
                                     style={{
@@ -139,7 +157,6 @@ const SignUp = () => {
                                         gap: "10px"
                                     }}
                                 >
-
                                     <TextField
                                         id="firstName"
                                         name="firstName"
@@ -265,7 +282,7 @@ const SignUp = () => {
                                             name="checkbox"
                                             size="small"
                                         // onChange={props.handleChange}
-                                        // value={props.values.check}
+                                        // value={props.user.check}
                                         // error={props.touched.check && props.errors.check}
                                         // helperText={props.touched.check && props.errors.check}
                                         // onBlur={props.handleBlur}
