@@ -17,7 +17,8 @@ export const useUploadPost = () => {
             url = payload.uploadFile;
         } else {
             const ImageResponse = await fetch(payload.uploadFile);
-            url = await ImageResponse.blob();
+            // url = await ImageResponse.blob();
+            url = payload.uploadFile;
         }
         // const blob = await ImageResponse.blob();
         const storageRef = ref(storage, `post/${nanoid()}`);
@@ -26,7 +27,7 @@ export const useUploadPost = () => {
                 .then((url) => {
                     setDoc(doc(postRef), {
                         ...payload,
-                        uploadFile: url,
+                        uploadFile: payload.uploadFile ? url : null,
                     });
                     setIsSuccess(true);
                 })

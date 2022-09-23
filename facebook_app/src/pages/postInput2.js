@@ -21,6 +21,8 @@ export default function PostInput2(props) {
     const [postImg, setPostImg] = useState(null)
 
     const getData = (e) => setPostText(e.target.value)
+
+
     //const getFile = (e) => setPostImg(e.target.files[0])
     // const getFile = (e) => setPostImg(e.target.value)
     //console.log(LocalStorageService.getCurrentUser('current_user'))

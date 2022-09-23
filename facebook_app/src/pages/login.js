@@ -102,6 +102,8 @@ const Login = () => {
                 // The signed-in user info.
                 const user = result.user;
                 LocalStorageService.setCurrentUser(user)
+                LocalStorageService.setToken(true)
+
                 navigate('/home')
                 // ...
             }).catch((error) => {

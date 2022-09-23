@@ -52,5 +52,6 @@ export const useGetPosts = () => {
             setIsLoading(false);
         }
     };
+
     return { getPosts, posts, isLoading };
 };
